@@ -17,14 +17,13 @@ print(f"Pełny zbiór wynikowy?: {not response_dict['incomplete_results']}")
 repo_dicts = response_dict['items']
 print(f"Liczba zwróconych repozytoriów: {len(repo_dicts)}")
 
-# Przeanalizowanie pierwszego repozytorium.
-repo_dict = repo_dicts[0]
-
-print("\nWybrane informacje o pierwszym repozytorium:")
-print(f"Nazwa: {repo_dict['name']}")
-print(f"Właściciel: {repo_dict['owner']['login']}")
-print(f"Gwiazdki: {repo_dict['stargazers_count']}")
-print(f"Repozytorium: {repo_dict['html_url']}")
-print(f"Utworzone: {repo_dict['created_at']}")
-print(f"Uaktualnione: {repo_dict['updated_at']}")
-print(f"Opis: {repo_dict['description']}")
+# Przeanalizowanie wybranych danych o każdym repozytorium.
+print("\nWybrane informacje o każdym repozytorium:")
+for repo_dict in repo_dicts:  
+    print(f"\nNazwa: {repo_dict['name']}")
+    print(f"Właściciel: {repo_dict['owner']['login']}")
+    print(f"Gwiazdki: {repo_dict['stargazers_count']}")
+    print(f"Repozytorium: {repo_dict['html_url']}")
+    print(f"Utworzone: {repo_dict['created_at']}")
+    print(f"Uaktualnione: {repo_dict['updated_at']}")
+    print(f"Opis: {repo_dict['description']}")
